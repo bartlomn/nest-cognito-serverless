@@ -17,6 +17,10 @@ provider:
 functions:
   main:
     handler: src/lambda.handler
+    environment:
+      COGNITO_USER_POOL_ID: ${param:COGNITO_USER_POOL_ID}
+      COGNITO_CLIENT_ID: ${param:COGNITO_CLIENT_ID}
+      COGNITO_REGION: ${param:COGNITO_REGION}
     events:
       - http:
           method: post
