@@ -1,5 +1,7 @@
 service: nest-serverless-lambda-demo
 
+useDotenv: true
+
 plugins:
   - serverless-plugin-typescript
   - serverless-plugin-optimize
@@ -15,5 +17,11 @@ functions:
     handler: src/lambda.handler
     events:
       - http:
+          method: post
+          path: /auth/{proxy+}
+      - http:
           method: get
           path: /healthcheck
+      - http:
+          method: get
+          path: /user/{proxy+}
