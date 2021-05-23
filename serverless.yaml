@@ -1,4 +1,6 @@
-service: nest-serverless-lambda-demo
+org: bnowak
+app: nest-serverless
+service: api-service
 
 useDotenv: true
 
